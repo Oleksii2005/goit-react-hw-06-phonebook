@@ -1,16 +1,14 @@
+import { Routes, Route, Navigate } from "react-router-dom";
+import { MainPage } from "./mainPage/MainPage";
+// import {Layout} from "./Layout";
+
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
+    return (
+    <Routes>
+        <Route path="/" element={<MainPage/>}>
+            {/* <Route path="/" element={<MainPage/>}/> */}
+            <Route path="*" element={<Navigate to="/" replace />}/>
+        </Route>
+    </Routes>
+);  
 };
