@@ -1,14 +1,19 @@
-import { Routes, Route, Navigate } from 'react-router-dom';
-import MainPage from './mainPage/MainPage';
-// import {Layout} from "./Layout";
+// App.js
+import React from 'react';
+// import { Provider } from 'react-redux';
+// import { PersistGate } from 'redux-persist/integration/react';
+// import { store, persistor } from '../redux/store';
+import { ContactForm } from './ContactForm/ContactForm';
+import { ContactList } from './ContactList/ContactList';
+import { Filter } from './Filter/Filter';
 
 export const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<MainPage />}>
-        {/* <Route path="/" element={<MainPage/>}/> */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Route>
-    </Routes>
+    <div>
+      <h1>Книга контактів</h1>
+      <ContactForm />
+      <Filter />
+      <ContactList />
+    </div>
   );
 };
